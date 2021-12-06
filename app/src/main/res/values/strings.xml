@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">testWebView</string>
+    <string name="home">Home</string>
+    <string name="some_rules">Rules: Some rules.</string>
+    <string name="confirm">Confirm and continue</string>
+    <string name="exit">Exit</string>
+</resources>
