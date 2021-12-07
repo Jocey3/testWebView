@@ -12,7 +12,8 @@ import androidx.annotation.RequiresApi;
 import dev.jocey.testwebview.ui.ViewWV;
 
 public class MyWebClient extends WebViewClient {
-    ViewWV viewWV;
+    private ViewWV viewWV;
+    private String link = "https://support.appsflyer.com/hc/ru";
 
     public MyWebClient(ViewWV view) {
         viewWV = view;
@@ -20,14 +21,14 @@ public class MyWebClient extends WebViewClient {
 
     @Override
     public void onPageFinished(WebView view, String url) {
-        viewWV.saveLink(url);
+        link = url;
         super.onPageFinished(view, url);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
-
+        viewWV.saveLink(link);
         Log.d("myLog", "Error " + error.getDescription() + " " + error.getErrorCode());
         viewWV.showOffline();
     }

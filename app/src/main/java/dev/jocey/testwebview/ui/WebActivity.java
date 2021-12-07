@@ -9,6 +9,9 @@ import android.webkit.WebView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.appsflyer.AppsFlyerLib;
+import com.onesignal.OneSignal;
+
 import dev.jocey.testwebview.R;
 import presenter.Presenter;
 import util.MyWebClient;
@@ -16,13 +19,27 @@ import util.MyWebClient;
 public class WebActivity extends AppCompatActivity implements ViewWV {
     private WebView webView;
     private Presenter presenter;
+    private AppsFlyerLib appsFlyerLib;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
+        init();
         presenter = new Presenter(getSharedPreferences("settings", MODE_PRIVATE));
         openWeb(presenter.getLink());
+
+    }
+
+    public void init() {
+        appsFlyerLib = AppsFlyerLib.getInstance().init(String.valueOf(R.string.apps_flyer_dev_key), null, this);
+        Log.d("myLog", "AppsFlyerLib: " + appsFlyerLib.getAppsFlyerUID(this));
+
+
+//        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.DEBUG, OneSignal.LOG_LEVEL.DEBUG);
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId("fca6d40f-e09f-4b7b-b4b3-fc18ee26468d");
+
     }
 
     @Override

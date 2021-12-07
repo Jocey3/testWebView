@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">testWebView</string>
+    <string name="apps_flyer_dev_key">GKWbYry3bChRBNZiuZcQvF</string>
+    <string name="facebook_app_id">278419077649018</string>
+    <string name="one_signal_app_id">fca6d40f-e09f-4b7b-b4b3-fc18ee26468d</string>
     <string name="home">Home</string>
     <string name="some_rules">Rules: Some rules.</string>
     <string name="confirm">Confirm and continue</string>

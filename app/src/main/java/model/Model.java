@@ -2,12 +2,15 @@ package model;
 
 import android.content.SharedPreferences;
 
+
 public class Model {
     private final SharedPreferences settings;
     private static final String SAVED_LINK = "Link";
 
+
     public Model(SharedPreferences settings) {
         this.settings = settings;
+
     }
 
     public String getLink() {
