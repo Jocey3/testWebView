@@ -4,4 +4,7 @@
     <string name="some_rules">Rules: Some rules.</string>
     <string name="confirm">Confirm and continue</string>
     <string name="exit">Exit</string>
+    <string name="webv">WebView</string>
+    <string name="text_offline">You are offline, if you want use this app check your internet connection and tap on button.</string>
+    <string name="repeat">Repeat</string>
 </resources>
